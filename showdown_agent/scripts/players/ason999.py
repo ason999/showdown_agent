@@ -74,6 +74,6 @@ IVs: 0 Atk
 #         return self.choose_random_move(battle)
 
 
-class CustomAgent(SimpleHeuristicsPlayer):
-    def __init__(self, *args, **kwargs):
-        super().__init__(team=team, *args, **kwargs)
+# class CustomAgent(SimpleHeuristicsPlayer):
+#     def __init__(self, *args, **kwargs):
+#         super().__init__(team=team, *args, **kwargs)
