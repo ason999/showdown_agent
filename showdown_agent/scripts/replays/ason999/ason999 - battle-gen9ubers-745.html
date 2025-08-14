@@ -237,15 +237,15 @@
     <h1 style="font-weight:normal;text-align:center"><strong>poke-env battle replay</strong><br />battle-gen9ubers-745<br /><a
             href="http://pokemonshowdown.com/users/randomplayer1" class="subtle" target="_blank">ason999</a>
         vs. <a href="http://pokemonshowdown.com/users/randomplayer2" class="subtle"
-            target="_blank">random-ru</a></h1>
+            target="_blank">simple-uber</a></h1>
     <script type="text/plain" class="battle-log-data">
     >battle-gen9ubers-745|init|battle
-|title|ason999 vs. random-ru
+|title|ason999 vs. simple-uber
 |j|☆ason999
-|j|☆random-ru
+|j|☆simple-uber
 |gametype|singles
-|player|p1|ason999|170|
-|player|p2|random-ru|2|
+|player|p1|ason999|266|
+|player|p2|simple-uber|2|
 |gen|9
 |tier|[Gen 9] Ubers
 |rule|HP Percentage Mod: HP is shown in percentages
@@ -257,132 +257,228 @@
 |rule|Evasion Moves Clause: Evasion moves are banned
 |clearpoke
 |poke|p1|Koraidon|
-|poke|p1|Arceus-Water|
-|poke|p1|Zacian-*|
+|poke|p1|Gholdengo|
 |poke|p1|Ting-Lu|
-|poke|p1|Chi-Yu|
 |poke|p1|Flutter Mane|
-|poke|p2|Rotom-Heat|
-|poke|p2|Krookodile, F|
-|poke|p2|Slowbro, M|
-|poke|p2|Cyclizar, F|
-|poke|p2|Jirachi|
-|poke|p2|Zapdos-Galar|
+|poke|p1|Arceus-Water|
+|poke|p1|Great Tusk|
+|poke|p2|Deoxys-Speed|
+|poke|p2|Kingambit, F|
+|poke|p2|Zacian-*|
+|poke|p2|Arceus-Fairy|
+|poke|p2|Eternatus|
+|poke|p2|Koraidon|
 |teampreview
 |
 |teamsize|p1|6
 |teamsize|p2|6
 |start
-|switch|p1a: Chi-Yu|Chi-Yu|251/251
-|switch|p2a: Cyclizar|Cyclizar, F|100/100
-|-ability|p1a: Chi-Yu|Beads of Ruin
+|switch|p1a: Great Tusk|Great Tusk|434/434
+|switch|p2a: Eternatus|Eternatus|100/100
+|-ability|p2a: Eternatus|Pressure
+|-enditem|p1a: Great Tusk|Booster Energy
+|-activate|p1a: Great Tusk|ability: Protosynthesis|[fromitem]
+|-start|p1a: Great Tusk|protosynthesisdef
 |turn|1
 |
-|move|p2a: Cyclizar|Rapid Spin|p1a: Chi-Yu
-|-damage|p1a: Chi-Yu|179/251
-|-boost|p2a: Cyclizar|spe|1
-|move|p1a: Chi-Yu|Dark Pulse|p2a: Cyclizar
-|-damage|p2a: Cyclizar|15/100
+|move|p2a: Eternatus|Dynamax Cannon|p1a: Great Tusk
+|-damage|p1a: Great Tusk|77/434
+|move|p1a: Great Tusk|Earthquake|p2a: Eternatus
+|-supereffective|p2a: Eternatus
+|-damage|p2a: Eternatus|33/100
 |
 |upkeep
 |turn|2
 |
-|switch|p2a: Krookodile|Krookodile, F|100/100
-|-ability|p2a: Krookodile|Intimidate|boost
-|-unboost|p1a: Chi-Yu|atk|1
-|move|p1a: Chi-Yu|Dark Pulse|p2a: Krookodile
-|-resisted|p2a: Krookodile
-|-damage|p2a: Krookodile|57/100
+|move|p2a: Eternatus|Dynamax Cannon|p1a: Great Tusk
+|-damage|p1a: Great Tusk|0 fnt
+|faint|p1a: Great Tusk
+|-end|p1a: Great Tusk|Protosynthesis|[silent]
 |
-|-heal|p2a: Krookodile|63/100|[from] item: Leftovers
 |upkeep
+|
+|switch|p1a: Koraidon|Koraidon|341/341
+|-weather|SunnyDay|[from] ability: Orichalcum Pulse|[of] p1a: Koraidon
+|-activate|p1a: Koraidon|Orichalcum Pulse|[source]
 |turn|3
 |
-|switch|p2a: Jirachi|Jirachi|100/100
-|move|p1a: Chi-Yu|Dark Pulse|p2a: Jirachi
-|-supereffective|p2a: Jirachi
-|-damage|p2a: Jirachi|0 fnt
-|faint|p2a: Jirachi
+|move|p1a: Koraidon|Outrage|p2a: Eternatus
+|-supereffective|p2a: Eternatus
+|-damage|p2a: Eternatus|0 fnt
+|faint|p2a: Eternatus
 |
+|-weather|SunnyDay|[upkeep]
 |upkeep
 |
-|switch|p2a: Zapdos|Zapdos-Galar|100/100
+|switch|p2a: Arceus|Arceus-Fairy|100/100
 |turn|4
 |
-|switch|p2a: Slowbro|Slowbro, M|100/100
-|move|p1a: Chi-Yu|Dark Pulse|p2a: Slowbro
-|-supereffective|p2a: Slowbro
-|-damage|p2a: Slowbro|0 fnt
-|faint|p2a: Slowbro
+|move|p1a: Koraidon|Outrage|p2a: Arceus|[from] lockedmove
+|-immune|p2a: Arceus
+|-start|p1a: Koraidon|confusion|[fatigue]
+|move|p2a: Arceus|Judgment|p1a: Koraidon
+|-supereffective|p1a: Koraidon
+|-damage|p1a: Koraidon|0 fnt
+|faint|p1a: Koraidon
 |
+|-weather|SunnyDay|[upkeep]
 |upkeep
 |
-|switch|p2a: Rotom|Rotom-Heat|100/100
+|switch|p1a: Gholdengo|Gholdengo|315/315
 |turn|5
 |
-|-terastallize|p2a: Rotom|Steel
-|move|p1a: Chi-Yu|Dark Pulse|p2a: Rotom
-|-damage|p2a: Rotom|7/100
-|cant|p2a: Rotom|flinch
+|move|p2a: Arceus|Calm Mind|p2a: Arceus
+|-boost|p2a: Arceus|spa|1
+|-boost|p2a: Arceus|spd|1
+|move|p1a: Gholdengo|Make It Rain|p2a: Arceus
+|-supereffective|p2a: Arceus
+|-damage|p2a: Arceus|11/100
+|-unboost|p1a: Gholdengo|spa|1
 |
+|-weather|SunnyDay|[upkeep]
 |upkeep
 |turn|6
 |
-|switch|p2a: Zapdos|Zapdos-Galar|100/100
-|move|p1a: Chi-Yu|Dark Pulse|p2a: Zapdos
-|-resisted|p2a: Zapdos
-|-damage|p2a: Zapdos|49/100
+|move|p2a: Arceus|Calm Mind|p2a: Arceus
+|-boost|p2a: Arceus|spa|1
+|-boost|p2a: Arceus|spd|1
+|move|p1a: Gholdengo|Make It Rain|p2a: Arceus
+|-supereffective|p2a: Arceus
+|-damage|p2a: Arceus|0 fnt
+|-unboost|p1a: Gholdengo|spa|1
+|faint|p2a: Arceus
 |
+|-weather|SunnyDay|[upkeep]
 |upkeep
+|
+|switch|p2a: Kingambit|Kingambit, F|100/100
+|-activate|p2a: Kingambit|ability: Supreme Overlord
+|-start|p2a: Kingambit|fallen2|[silent]
 |turn|7
 |
-|switch|p2a: Krookodile|Krookodile, F|63/100
-|-ability|p2a: Krookodile|Intimidate|boost
-|-unboost|p1a: Chi-Yu|atk|1
-|move|p1a: Chi-Yu|Dark Pulse|p2a: Krookodile
-|-resisted|p2a: Krookodile
-|-damage|p2a: Krookodile|22/100
+|move|p1a: Gholdengo|Make It Rain|p2a: Kingambit
+|-resisted|p2a: Kingambit
+|-damage|p2a: Kingambit|73/100
+|-unboost|p1a: Gholdengo|spa|1
+|move|p2a: Kingambit|Kowtow Cleave|p1a: Gholdengo
+|-supereffective|p1a: Gholdengo
+|-damage|p1a: Gholdengo|0 fnt
+|faint|p1a: Gholdengo
 |
-|-heal|p2a: Krookodile|29/100|[from] item: Leftovers
+|-weather|none
 |upkeep
+|
+|switch|p1a: Ting-Lu|Ting-Lu|514/514
+|-ability|p1a: Ting-Lu|Vessel of Ruin
 |turn|8
 |
-|switch|p2a: Cyclizar|Cyclizar, F|48/100
-|move|p1a: Chi-Yu|Dark Pulse|p2a: Cyclizar
-|-damage|p2a: Cyclizar|0 fnt
-|faint|p2a: Cyclizar
+|move|p2a: Kingambit|Iron Head|p1a: Ting-Lu
+|-damage|p1a: Ting-Lu|355/514
+|cant|p1a: Ting-Lu|flinch
 |
+|-heal|p1a: Ting-Lu|387/514|[from] item: Leftovers
 |upkeep
-|
-|switch|p2a: Krookodile|Krookodile, F|29/100
-|-ability|p2a: Krookodile|Intimidate|boost
-|-unboost|p1a: Chi-Yu|atk|1
 |turn|9
 |
-|move|p1a: Chi-Yu|Dark Pulse|p2a: Krookodile
-|-resisted|p2a: Krookodile
-|-damage|p2a: Krookodile|0 fnt
-|faint|p2a: Krookodile
+|move|p2a: Kingambit|Iron Head|p1a: Ting-Lu
+|-damage|p1a: Ting-Lu|213/514
+|move|p1a: Ting-Lu|Earthquake|p2a: Kingambit
+|-supereffective|p2a: Kingambit
+|-damage|p2a: Kingambit|16/100
 |
+|-heal|p1a: Ting-Lu|245/514|[from] item: Leftovers
 |upkeep
-|
-|switch|p2a: Rotom|Rotom-Heat, tera:Steel|7/100
 |turn|10
 |
-|switch|p2a: Zapdos|Zapdos-Galar|49/100
-|move|p1a: Chi-Yu|Dark Pulse|p2a: Zapdos
-|-resisted|p2a: Zapdos
-|-damage|p2a: Zapdos|0 fnt
-|faint|p2a: Zapdos
+|move|p2a: Kingambit|Iron Head|p1a: Ting-Lu
+|-damage|p1a: Ting-Lu|80/514
+|move|p1a: Ting-Lu|Earthquake|p2a: Kingambit
+|-supereffective|p2a: Kingambit
+|-damage|p2a: Kingambit|0 fnt
+|faint|p2a: Kingambit
+|-end|p2a: Kingambit|fallen2|[silent]
 |
+|-heal|p1a: Ting-Lu|112/514|[from] item: Leftovers
 |upkeep
 |
-|switch|p2a: Rotom|Rotom-Heat, tera:Steel|7/100
+|switch|p2a: Koraidon|Koraidon|100/100
+|-weather|SunnyDay|[from] ability: Orichalcum Pulse|[of] p2a: Koraidon
+|-activate|p2a: Koraidon|Orichalcum Pulse|[source]
 |turn|11
 |
-|move|p1a: Chi-Yu|Dark Pulse|p2a: Rotom
-|-damage|p2a: Rotom|0 fnt
-|faint|p2a: Rotom
+|move|p2a: Koraidon|Close Combat|p1a: Ting-Lu
+|-supereffective|p1a: Ting-Lu
+|-crit|p1a: Ting-Lu
+|-damage|p1a: Ting-Lu|0 fnt
+|-unboost|p2a: Koraidon|def|1
+|-unboost|p2a: Koraidon|spd|1
+|faint|p1a: Ting-Lu
+|-damage|p2a: Koraidon|91/100|[from] item: Life Orb
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|
+|switch|p1a: Flutter Mane|Flutter Mane|251/251
+|-activate|p1a: Flutter Mane|ability: Protosynthesis
+|-start|p1a: Flutter Mane|protosynthesisspe
+|turn|12
+|
+|switch|p2a: Zacian|Zacian-Crowned|100/100
+|-ability|p2a: Zacian|Intrepid Sword|boost
+|-boost|p2a: Zacian|atk|1
+|move|p1a: Flutter Mane|Moonblast|p2a: Zacian
+|-resisted|p2a: Zacian
+|-damage|p2a: Zacian|76/100
+|-unboost|p2a: Zacian|spa|1
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|turn|13
+|
+|move|p1a: Flutter Mane|Mystical Fire|p2a: Zacian
+|-supereffective|p2a: Zacian
+|-damage|p2a: Zacian|0 fnt
+|faint|p2a: Zacian
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|
+|switch|p2a: Deoxys|Deoxys-Speed|100/100
+|-ability|p2a: Deoxys|Pressure
+|turn|14
+|
+|move|p1a: Flutter Mane|Shadow Ball|p2a: Deoxys
+|-supereffective|p2a: Deoxys
+|-enditem|p2a: Deoxys|Focus Sash
+|-damage|p2a: Deoxys|1/100
+|move|p2a: Deoxys|Psycho Boost|p1a: Flutter Mane
+|-damage|p1a: Flutter Mane|125/251
+|-unboost|p2a: Deoxys|spa|2
+|
+|-weather|SunnyDay|[upkeep]
+|upkeep
+|turn|15
+|
+|move|p1a: Flutter Mane|Shadow Ball|p2a: Deoxys
+|-supereffective|p2a: Deoxys
+|-damage|p2a: Deoxys|0 fnt
+|faint|p2a: Deoxys
+|
+|-weather|none
+|-end|p1a: Flutter Mane|Protosynthesis
+|upkeep
+|
+|switch|p2a: Koraidon|Koraidon|91/100
+|-weather|SunnyDay|[from] ability: Orichalcum Pulse|[of] p2a: Koraidon
+|-activate|p1a: Flutter Mane|ability: Protosynthesis
+|-start|p1a: Flutter Mane|protosynthesisspe
+|-activate|p2a: Koraidon|Orichalcum Pulse|[source]
+|turn|16
+|
+|move|p1a: Flutter Mane|Moonblast|p2a: Koraidon
+|-supereffective|p2a: Koraidon
+|-damage|p2a: Koraidon|0 fnt
+|faint|p2a: Koraidon
 |
     </script>
 </div>
