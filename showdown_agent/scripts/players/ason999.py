@@ -3,144 +3,145 @@ from poke_env.player import Player
 from poke_env.battle.move import Move
 from poke_env.battle.pokemon import Pokemon
 from poke_env.battle.side_condition import SideCondition
+# from poke_env.player.battle_order import SingleBattleOrder
 
 from typing import List, Optional, Tuple
 
 
 
 #Team for Class Competition
-team = """
-Koraidon @ Choice Scarf  
-Ability: Orichalcum Pulse  
-Tera Type: Fire  
-EVs: 252 Atk / 4 Def / 252 Spe  
-Jolly Nature  
-- Flare Blitz  
-- Close Combat  
-- U-turn  
-- Outrage  
+# team = """
+# Koraidon @ Choice Scarf  
+# Ability: Orichalcum Pulse  
+# Tera Type: Fire  
+# EVs: 252 Atk / 4 Def / 252 Spe  
+# Jolly Nature  
+# - Flare Blitz  
+# - Close Combat  
+# - U-turn  
+# - Outrage  
 
-Gholdengo @ Choice Specs  
-Ability: Good as Gold  
-Tera Type: Flying  
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Make It Rain  
-- Shadow Ball  
-- Focus Blast  
-- Trick  
+# Gholdengo @ Choice Specs  
+# Ability: Good as Gold  
+# Tera Type: Flying  
+# EVs: 252 SpA / 4 SpD / 252 Spe  
+# Timid Nature  
+# IVs: 0 Atk  
+# - Make It Rain  
+# - Shadow Ball  
+# - Focus Blast  
+# - Trick  
 
-Ting-Lu @ Leftovers  
-Ability: Vessel of Ruin  
-Tera Type: Poison  
-EVs: 252 HP / 4 Atk / 252 SpD  
-Careful Nature  
-- Spikes  
-- Ruination  
-- Whirlwind  
-- Earthquake  
+# Ting-Lu @ Leftovers  
+# Ability: Vessel of Ruin  
+# Tera Type: Poison  
+# EVs: 252 HP / 4 Atk / 252 SpD  
+# Careful Nature  
+# - Spikes  
+# - Ruination  
+# - Whirlwind  
+# - Earthquake  
 
-Flutter Mane @ Focus Sash  
-Ability: Protosynthesis  
-Tera Type: Ghost  
-EVs: 252 SpA / 4 SpD / 252 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Shadow Ball  
-- Moonblast  
-- Mystical Fire  
-- Taunt  
+# Flutter Mane @ Focus Sash  
+# Ability: Protosynthesis  
+# Tera Type: Ghost  
+# EVs: 252 SpA / 4 SpD / 252 Spe  
+# Timid Nature  
+# IVs: 0 Atk  
+# - Shadow Ball  
+# - Moonblast  
+# - Mystical Fire  
+# - Taunt  
 
-Arceus-Water @ Splash Plate  
-Ability: Multitype  
-Tera Type: Fairy  
-EVs: 248 HP / 8 Def / 252 Spe  
-Timid Nature  
-IVs: 0 Atk  
-- Judgment  
-- Calm Mind  
-- Recover  
-- Substitute  
+# Arceus-Water @ Splash Plate  
+# Ability: Multitype  
+# Tera Type: Fairy  
+# EVs: 248 HP / 8 Def / 252 Spe  
+# Timid Nature  
+# IVs: 0 Atk  
+# - Judgment  
+# - Calm Mind  
+# - Recover  
+# - Substitute  
 
-Great Tusk @ Booster Energy  
-Ability: Protosynthesis  
-Tera Type: Steel  
-EVs: 252 HP / 4 Atk / 252 Def  
-Impish Nature  
-- Rapid Spin  
-- Knock Off  
-- Earthquake  
-- Ice Spinner  
-"""
+# Great Tusk @ Booster Energy  
+# Ability: Protosynthesis  
+# Tera Type: Steel  
+# EVs: 252 HP / 4 Atk / 252 Def  
+# Impish Nature  
+# - Rapid Spin  
+# - Knock Off  
+# - Earthquake  
+# - Ice Spinner  
+# """
 
 # # # Random Team 1
 
-# team = """
-# Landorus @ Life Orb
-# Ability: Sheer Force
-# Tera Type: Ground
-# EVs: 252 spa / 4 spd / 252 spe 
-# Timid Nature
-# IVs: 0 atk 
-# - Earth Power
-# - Focus Blast
-# - Psychic
-# - Nasty Plot
+team = """
+Landorus @ Life Orb
+Ability: Sheer Force
+Tera Type: Ground
+EVs: 252 spa / 4 spd / 252 spe 
+Timid Nature
+IVs: 0 atk 
+- Earth Power
+- Focus Blast
+- Psychic
+- Nasty Plot
 
-# Clawitzer @ Choice Specs
-# Ability: Mega Launcher
-# Tera Type: Dragon
-# EVs: 4 def / 252 spa / 252 spe 
-# Modest Nature
-# IVs: 0 atk 
-# - Water Pulse
-# - Dragon Pulse
-# - Aura Sphere
-# - Dark Pulse
+Clawitzer @ Choice Specs
+Ability: Mega Launcher
+Tera Type: Dragon
+EVs: 4 def / 252 spa / 252 spe 
+Modest Nature
+IVs: 0 atk 
+- Water Pulse
+- Dragon Pulse
+- Aura Sphere
+- Dark Pulse    
 
-# Dialga @ Choice Scarf
-# Ability: Pressure
-# Tera Type: Dragon
-# EVs: 252 spa / 4 spd / 252 spe 
-# Timid Nature
-# IVs: 0 atk 
-# - Draco Meteor
-# - Fire Blast
-# - Dragon Pulse
-# - Thunder
+Dialga @ Choice Scarf
+Ability: Pressure
+Tera Type: Dragon
+EVs: 252 spa / 4 spd / 252 spe 
+Timid Nature
+IVs: 0 atk 
+- Draco Meteor
+- Fire Blast
+- Dragon Pulse
+- Thunder
 
-# Hydrapple @ Choice Specs
-# Ability: Regenerator
-# Tera Type: Steel
-# EVs: 4 def / 252 spa / 252 from typing import List, Optional, Tuplespe 
-# Modest Nature
-# - Leaf Storm
-# - Draco Meteor
-# - Earth Power
-# - Fickle Beam
+Hydrapple @ Choice Specs
+Ability: Regenerator
+Tera Type: Steel
+EVs: 4 def / 252 spa / 252 spd
+Modest Nature
+- Leaf Storm
+- Draco Meteor
+- Earth Power
+- Fickle Beam
 
-# Appletun @ Heavy-Duty Boots
-# Ability: Thick Fat
-# Tera Type: Steel
-# EVs: 252 hp / 4 def / 252 spd 
-# Sassy Nature
-# - Apple Acid
-# - Dragon Pulse
-# - Dragon Tail
-# - Recover
+Appletun @ Heavy-Duty Boots
+Ability: Thick Fat
+Tera Type: Steel
+EVs: 252 hp / 4 def / 252 spd 
+Sassy Nature
+- Apple Acid
+- Dragon Pulse
+- Dragon Tail
+- Recover
 
-# Pyroar @ Heavy-Duty Boots
-# Ability: Unnerve
-# Tera Type: Ghost
-# EVs: 4 def / 252 spa / 252 spe 
-# Timid Nature
-# IVs: 0 atk 
-# - Fire Blast
-# - Hyper Voice
-# - Taunt
-# - Will-O-Wisp
-# """
+Pyroar @ Heavy-Duty Boots
+Ability: Unnerve
+Tera Type: Ghost
+EVs: 4 def / 252 spa / 252 spe 
+Timid Nature
+IVs: 0 atk 
+- Fire Blast
+- Hyper Voice
+- Taunt
+- Will-O-Wisp
+"""
 
 
 # # Random Team 2
@@ -219,7 +220,7 @@ TYPE_WEIGHT = 1.25
 HAZARD_TURN_CUTOFF = 3
 SWITCH_OUT_MATCHUP_THRESHOLD = -0.75
 DANGER_KO_THRESHOLD = 0.95  # if predicted best incoming hit >= 95% of our HP, bail
-SWEEP_WINDOW_THRESHOLD = 1.25  # matchup score to consider "very favorable" for dmax
+SWEEP_WINDOW_THRESHOLD = 1.25  # matchup score to consider "very favorable" for terra
 ENDGAME_MON_COUNT = 1  # last-mon check for dmax
 MIN_SAFE_HAZARD_MATCHUP = 0.0  # only set hazards if we aren't in a losing matchup
 MIN_SAFE_HAZARD_HP_FRAC = 0.6  # avoid hazards if we're too low
@@ -244,30 +245,46 @@ class CustomAgent(Player):
 
     ## Plan
 
-    # In order of importance
+    # In order of importance:
 
-    # Estimate the matchup - Calculate damage ratio and special ratio of the two pokemon, health difference, 
+    # 1. Switch out the pokemon if the match up is really bad (opponents pokemon is a direct coutner), 
+    # take into account the entry hazzards, might be worth using an anti hazzard
 
-    # Decide if i should use Entry Hazzards
+    # 2. Estimate opponents next best move, if they are likely switch out, put down some hazzards like spikes.
 
-    # Boost stats if match up is good
+    # 3. On the other hand if the matchup really favours me, look if any moves boost my stats or put down a hazzard that slows or debuffs the opponent,
+    #  decide if it is good.
+
+    # 4. Should look at terrastralizing, especially if there is a sweep window or if we are down to the wire with our last two pokemon left.
+
+    # 4. if neutral, i want to now decide what is the best move against their type,
+    #  but also taking into account the accuracy and actual damage of the move.
+
+    # 5. Fall back to random move
+
+
+    # Functionality 
+
+    # Estimate the matchup - Calculate damage ratio and special ratio of the two pokemon, health difference, as well as speed. 
+
+    # Decide if i should use Entry Hazzards, look to remove entry hazards on my side. 
+
+    # Boost stats if match up favours me
 
     # if matchup is shite, switch to matchup that is estimated to be the best
+
     # fallback to random move to not break anything 
 
 
 # could possibly add:
 # - switching prediction , opponent movement prediction, add hazards if opponent obviosuly switches 
 # - add to the hazards ( smarter hazards, imunities)
-# - Dynamax logic, find sweep windows
-# - look at switching logic, 
+# - Terra logic, find sweep windows
 # - Add a risk factor? if losing then turn up the risk factor to pull of riskier but more rewarding moves
 # - track opponent info? 
 
 
-    # -----------------------
-    # Core: matchup estimation
-    # -----------------------
+    # matchup estimation
     def _coarse_stat(self, mon: Pokemon, key: str) -> int:
         # Prefer revealed stats; otherwise fall back to base_stats (poke-env provides both)
         return (mon.stats.get(key) or mon.base_stats.get(key) or 0)
@@ -282,7 +299,7 @@ class CustomAgent(Player):
         spec = spa / spd
         return ATK_DEF_WEIGHT * phys + SPA_SPD_WEIGHT * spec
 
-    def _type_pressure(self, atk_mon: Pokemon, def_mon: Pokemon) -> float:
+    def _type_calculation(self, atk_mon: Pokemon, def_mon: Pokemon) -> float:
         # How well our types hit them vs theirs hitting us
         our_best = max([def_mon.damage_multiplier(t) for t in atk_mon.types if t], default=1.0)
         their_best = max([atk_mon.damage_multiplier(t) for t in def_mon.types if t], default=1.0)
@@ -294,7 +311,7 @@ class CustomAgent(Player):
         HP fractions, and coarse atk/def ratios.
         """
         score = 0.0
-        score += self._type_pressure(mon, opponent)
+        score += self._type_calculation(mon, opponent)
         # speed tier bump
         if self._coarse_stat(mon, "spe") > self._coarse_stat(opponent, "spe"):
             score += SPEED_TIER_COEFFICIENT
@@ -306,9 +323,7 @@ class CustomAgent(Player):
         score += self._off_def_ratio(mon, opponent) - self._off_def_ratio(opponent, mon)
         return score
 
-    # ---------------------------------
     # Rough damage model for a given move
-    # ---------------------------------
     def _type_multiplier_for_move(self, move: Move, defender: Pokemon) -> float:
         try:
             return defender.damage_multiplier(move)
@@ -323,17 +338,11 @@ class CustomAgent(Player):
             return 1.0
 
     def _lane_coeff(self, move: Move, attacker: Pokemon, defender: Pokemon) -> float:
-        # Physical or Special lane based on attacker & defender stats
-        try:
-            cat = move.category  # 'physical'|'special'|'status'
-        except Exception:
-            cat = "status"
-        if cat == "status":
-            return 0.0
+        cat = getattr(move, "category", None)  # "physical" | "special" | None
         if cat == "physical":
             atk = max(self._coarse_stat(attacker, "atk"), 1)
             dfn = max(self._coarse_stat(defender, "def"), 1)
-        else:  # special
+        else:  # treat unknown as special
             atk = max(self._coarse_stat(attacker, "spa"), 1)
             dfn = max(self._coarse_stat(defender, "spd"), 1)
         return atk / dfn
@@ -358,55 +367,33 @@ class CustomAgent(Player):
     # ------------------------------------
     # Predict opponent's next best move
     # ------------------------------------
-    def _opponent_best_move_and_damage(self, battle: AbstractBattle) -> Tuple[Optional[Move], float]:
-        me = battle.active_pokemon
-        opp = battle.opponent_active_pokemon
-        if not me or not opp:
-            return None, 0.0
-        best_move = None
-        best_dmg = 0.0
-        candidate_moves: List[Move] = list(getattr(opp, "moves", {}).values()) or []
-        if not candidate_moves:
-            return None, 0.25  # unknown set: assume ~25% HP potential as a soft prior
-        for mv in candidate_moves:
-            est = self._estimate_move_damage_fraction(mv, opp, me)
-            if est > best_dmg:
-                best_dmg = est
-                best_move = mv
-        return best_move, best_dmg
 
-    # ------------------------------------
-    # Entry hazard decision
-    # ------------------------------------
-    def _should_set_entry_hazard(self, battle: AbstractBattle) -> Optional[Move]:
-        me = battle.active_pokemon
-        opp = battle.opponent_active_pokemon
-        if not me or not opp:
-            return None
-        if battle.turn is not None and battle.turn > HAZARD_TURN_CUTOFF:
-            return None
-        if me.current_hp_fraction < MIN_SAFE_HAZARD_HP_FRAC:
-            return None
+    ## At the moment it does the opponents next best move based on damage, 
 
-        matchup = self._estimate_matchup(me, opp)
-        if matchup < MIN_SAFE_HAZARD_MATCHUP:
-            return None  # too risky to waste a turn
+    # def _opponent_best_move_and_damage(self, battle: AbstractBattle) -> Tuple[Optional[Move], float]:
+    #     me = battle.active_pokemon
+    #     opp = battle.opponent_active_pokemon
+    #     if not me or not opp:
+    #         return None, 0.0
 
-        # If opponent likely to switch (they're in a bad matchup or fear a KO), hazards gain value
-        _, opp_best = self._opponent_best_move_and_damage(battle)
-        we_threaten_ko = self._best_offensive_pressure(battle) >= 0.9
-        they_threaten_ko = opp_best >= 0.9
-        likely_switch = (matchup > 0.5 and we_threaten_ko and not they_threaten_ko)
+    #     best_mv = None
+    #     best_est = 0.0
 
-        # Only set hazards if not already present and we have the move
-        our_moves = {m.id: m for m in battle.available_moves}
-        for name, cond in self.ENTRY_HAZARDS.items():
-            if name in our_moves:
-                already_set = cond in battle.opponent_side_conditions
-                if not already_set and (likely_switch or matchup >= 0.75):
-                    return our_moves[name]
-        return None
+    #     # Known moves the env has seen for the opponent (can be empty early)
+    #     opp_known_moves: List[Move] = list(getattr(opp, "moves", {}).values()) or []
+    #     if not opp_known_moves:
+    #         return None, 0.25  # soft prior if we know nothing about their set
 
+    #     for mv in opp_known_moves:
+    #         est = self._estimate_move_damage_fraction(mv, opp, me)
+    #         if est > best_est:
+    #             best_est = est
+    #             best_mv = mv
+
+    #     return best_mv, best_est
+
+
+    # want to implemet to do damage with 
     def _best_offensive_pressure(self, battle: AbstractBattle) -> float:
         me = battle.active_pokemon
         opp = battle.opponent_active_pokemon
@@ -419,30 +406,54 @@ class CustomAgent(Player):
                 best = est
         return best
 
-    # -------------------------
-    # Dynamax (if the format can)
-    # -------------------------
-    def _should_dynamax(self, battle: AbstractBattle) -> bool:
-        if not battle.can_dynamax:
+   # Add a Terastallization decision logic
+    def _should_terastallize(self, battle: AbstractBattle) -> bool:
+        if not getattr(battle, "can_tera", False):  # guard: format availability
             return False
         me = battle.active_pokemon
         opp = battle.opponent_active_pokemon
-        if not me or not opp:
+        if not me or not opp or getattr(me, "is_terastallized", False):
             return False
 
-        my_remaining = len([p for p in battle.team.values() if not p.fainted])
-        # Endgame: last mon standing, consider dmax to clutch
-        if my_remaining <= ENDGAME_MON_COUNT:
-            return True
+        # Simple heuristic: Tera if our best move already matches our Tera type
+        # and our matchup is very favorable (sweep window).
+        if not battle.available_moves:
+            return False
 
-        # Strong sweep window: we outspeed, have a great matchup, and can pressure big damage
-        matchup = self._estimate_matchup(me, opp)
-        outspeed = self._coarse_stat(me, "spe") >= self._coarse_stat(opp, "spe")
-        pressure = self._best_offensive_pressure(battle)
-        if outspeed and matchup >= SWEEP_WINDOW_THRESHOLD and pressure >= 0.6:
-            return True
-
+        best_move = max(
+            battle.available_moves,
+            key=lambda mv: self._estimate_move_damage_fraction(mv, me, opp)
+        )
+        if me.tera_type and getattr(best_move, "type", None) == me.tera_type:
+            return self._estimate_matchup(me, opp) >= SWEEP_WINDOW_THRESHOLD
         return False
+    
+
+
+    def _should_set_entry_hazard(self, battle: AbstractBattle) -> Optional[Move]:
+        me = battle.active_pokemon
+        opp = battle.opponent_active_pokemon
+        if not me or not opp or not battle.available_moves:
+            return None
+
+        # Don’t set if we’re too low or losing badly right now
+        matchup = self._estimate_matchup(me, opp)
+        if me.current_hp_fraction < MIN_SAFE_HAZARD_HP_FRAC or matchup < MIN_SAFE_HAZARD_MATCHUP:
+            return None
+
+        # Prefer hazards when we likely force a switch (we threaten them, they don’t threaten us)
+        _, opp_best = self._opponent_best_move_and_damage(battle)
+        we_threaten_ko = self._best_offensive_pressure(battle) >= 0.9
+        they_threaten_ko = opp_best >= 0.9
+        likely_switch = (matchup > 0.5 and we_threaten_ko and not they_threaten_ko)
+
+        our_moves = {m.id: m for m in battle.available_moves}
+        for name, cond in self.ENTRY_HAZARDS.items():
+            if name in our_moves:
+                already_set = cond in getattr(battle, "opponent_side_conditions", {})
+                if not already_set and (likely_switch or matchup >= 0.75):
+                    return our_moves[name]
+        return None
 
     # --------------------------------
     # Switch-out logic
@@ -507,8 +518,8 @@ class CustomAgent(Player):
         if hazard_move is not None:
             return self.create_order(hazard_move)
 
-        # 4) Dynamax if a clear sweep window / endgame (if available in this format)
-        do_dmax = self._should_dynamax(battle)
+        # 4) Terra if a clear sweep window / endgame (if available in this format)
+        do_terra = self._should_terastallize(battle)
 
         # 5) Attack: pick the highest estimated damage move
         if me and opp and battle.available_moves:
@@ -516,7 +527,7 @@ class CustomAgent(Player):
                 battle.available_moves,
                 key=lambda mv: self._estimate_move_damage_fraction(mv, me, opp),
             )
-            return self.create_order(best_move, dynamax=do_dmax)
+            return self.create_order(best_move, terastallize=do_terra)
 
         # 6) As a fallback, use poke-env random legal choice to avoid stalling the engine
         return self.choose_random_move(battle)
